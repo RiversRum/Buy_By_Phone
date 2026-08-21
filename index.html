@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy By Phone — No mortgage, no interest, no debt</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KICA8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI3IiBmaWxsPSIjMTYyMzNGIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNCwxNykgc2NhbGUoMC42MikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y0Qzc0MCIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0zMCA1NiBMNjYgMjQgTDEwMiA1NiIvPgogICAgPHBhdGggZD0iTTg0IDQyIEwxNTAgNjQgTDEwMiA2NCIvPgogICAgPHBhdGggZD0iTTQwIDUyIEw0MCAxMDAgTDEzOCAxMDAgTDEzOCA2NCIvPgogICAgPHBhdGggZD0iTTU4IDEwMCBMNTggNzggTDc2IDc4IEw3NiAxMDAiLz4KICAgIDxyZWN0IHg9Ijk4IiB5PSI3NiIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE2Ii8+CiAgICA8cGF0aCBkPSJNMjYgMTAwIEwxNDYgMTAwIi8+CiAgPC9nPgo8L3N2Zz4K">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#16233F">
+</head>
+<body>
+<style>
+  :root{
+    --navy:#16233F; --navy-2:#1C2B49; --navy-3:#0E1729;
+    --gold:#F4C740; --gold-2:#E7AC33; --gold-deep:#BC8118;
+    --blue:#4E72E6; --blue-2:#5D7EEC;
+    --paper:#FBF8F2; --white:#ffffff;
+    --ink:#16233F; --slate:#4A5164; --muted:#8A8F9C;
+    --green:#1E9A67; --green-soft:#E7F4EC;
+    --line:#EAE4D8; --line-2:#E2DBCC;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+  }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+  section{ position:relative; }
+  h1,h2,h3{ letter-spacing:-.02em; line-height:1.05; margin:0; text-wrap:balance; }
+  p{ margin:0; }
+  a{ color:inherit; }
+
+  /* ---- nav ---- */
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(251,248,242,.86); backdrop-filter:saturate(1.4) blur(12px); border-bottom:1px solid var(--line); }
+  .nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .brand{ display:flex; align-items:center; gap:11px; font-weight:750; font-size:19px; color:var(--ink); text-decoration:none; letter-spacing:-.01em; }
+  .brand svg{ width:34px; height:28px; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; border:none; cursor:pointer; font-family:inherit; font-weight:650; border-radius:13px; text-decoration:none; transition:transform .12s ease, box-shadow .2s ease; }
+  .btn:active{ transform:scale(.97); }
+  .btn-blue{ background:linear-gradient(180deg,var(--blue-2),var(--blue)); color:#fff; padding:12px 22px; font-size:15px; box-shadow:0 10px 22px -10px rgba(78,114,230,.6); }
+  .btn-gold{ background:linear-gradient(180deg,#F6D050,var(--gold)); color:#3A2708; padding:15px 30px; font-size:16px; box-shadow:0 14px 28px -12px rgba(242,198,58,.7); }
+  .btn-ghost{ background:transparent; color:#EAF0FF; border:1.5px solid rgba(234,240,255,.32); padding:14px 26px; font-size:15px; }
+
+  /* ---- hero ---- */
+  .hero{ background:linear-gradient(180deg,#FBF8F2 0%,#F1EEE3 100%); color:var(--ink); overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero .wrap{ display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; padding-top:60px; padding-bottom:64px; }
+  .eyebrow{ display:inline-block; font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep); font-weight:700; margin-bottom:20px; }
+  .hero h1{ font-size:clamp(46px,6.8vw,82px); font-weight:800; color:var(--ink); letter-spacing:-.035em; }
+  .hero h1 .g{ color:#C68A15; }
+  .hero .sub{ margin-top:22px; font-size:19px; line-height:1.5; color:var(--slate); max-width:30ch; }
+  .hero .cta-row{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+  .hero .btn-ghost{ color:var(--ink); border-color:var(--line-2); }
+  .chip{ margin-top:30px; display:inline-flex; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); border:1.5px solid var(--line-2); border-radius:11px; padding:9px 15px; font-weight:600; }
+
+  /* ---- phone mockup ---- */
+  .phone{ justify-self:center; width:300px; background:#0c1424; border-radius:40px; padding:11px; box-shadow:0 40px 90px -30px rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.08); }
+  .phone .scr{ background:var(--paper); border-radius:31px; padding:20px 18px 22px; }
+  .ph-top{ display:flex; justify-content:space-between; align-items:center; }
+  .ph-top .who{ font-size:12px; color:var(--muted); font-weight:600; }
+  .ph-top .home{ font-size:16px; font-weight:750; color:var(--ink); margin-top:1px; }
+  .ph-av{ width:34px; height:34px; border-radius:50%; background:linear-gradient(150deg,#22345C,#16233F); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; }
+  .dial{ position:relative; width:172px; height:172px; margin:14px auto 6px; }
+  .dial .c{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .dial .l{ font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .dial .v{ font-size:42px; font-weight:650; color:var(--ink); line-height:1; margin-top:3px; }
+  .dial .v small{ font-size:19px; color:var(--muted); }
+  .dial .s{ font-size:11.5px; color:var(--slate); margin-top:5px; font-weight:500; }
+  .ph-cards{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:8px; }
+  .ph-card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:11px 12px; }
+  .ph-card .k{ font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .ph-card .val{ font-size:17px; font-weight:650; color:var(--ink); margin-top:3px; }
+  .ph-card .val.dn{ color:var(--green); }
+  .ph-buy{ margin-top:12px; text-align:center; background:linear-gradient(180deg,#F6D050,var(--gold)); color:#3A2708; border-radius:13px; padding:12px; font-weight:700; font-size:14px; }
+
+  /* hero phone — clean flat iPhone */
+  .hero-visual{ position:relative; justify-self:center; }
+  .device{ position:relative; width:278px; background:#0b0b0d; border-radius:52px; padding:11px;
+    box-shadow: inset 0 0 0 2px #26272c, 0 0 0 1px rgba(0,0,0,.06),
+      0 50px 90px -38px rgba(22,35,63,.42), 0 22px 44px -30px rgba(22,35,63,.28); }
+  .device-screen{ position:relative; height:566px; border-radius:44px; overflow:hidden; background:var(--paper); display:flex; flex-direction:column; }
+  .island{ position:absolute; top:12px; left:50%; transform:translateX(-50%); width:90px; height:26px; background:#000; border-radius:14px; z-index:8; }
+  .statusbar{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center; padding:15px 24px 2px; font-size:13.5px; font-weight:650; color:var(--ink); }
+  .statusbar .sig{ display:flex; align-items:center; gap:6px; color:var(--ink); }
+  .app-body{ flex:1 1 auto; overflow:hidden; padding:6px 17px 6px; }
+  .device .ph-top{ margin-bottom:6px; }
+  .device .dial{ margin:6px auto 2px; width:150px; height:150px; }
+  .prog{ margin-top:8px; }
+  .prog-row{ display:flex; justify-content:space-between; font-size:11px; color:var(--muted); font-weight:600; margin-bottom:6px; }
+  .prog-bar{ height:7px; border-radius:5px; background:#EFE9DE; overflow:hidden; }
+  .prog-bar i{ display:block; height:100%; width:15%; border-radius:5px; background:linear-gradient(90deg,#F6D050,#C9861A); }
+  .ph-latest{ margin-top:11px; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:8px 11px; }
+  .ph-latest .li{ width:30px; height:30px; border-radius:9px; background:#F6EED9; color:#BC8118; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; flex:0 0 auto; }
+  .ph-latest .lt{ font-size:12px; font-weight:650; color:var(--ink); }
+  .ph-latest .ld{ font-size:10.5px; color:var(--muted); margin-top:1px; }
+  .ph-latest .la{ font-size:12.5px; font-weight:700; color:var(--green); }
+  .tabbar{ flex:0 0 auto; display:flex; justify-content:space-around; align-items:center; border-top:1px solid var(--line); padding:9px 0 20px; background:#fff; }
+  .tab{ display:flex; flex-direction:column; align-items:center; gap:3px; font-size:9.5px; font-weight:600; color:#A7A2A8; }
+  .tab.on{ color:var(--ink); }
+  .tab svg{ width:20px; height:20px; }
+  .home-ind{ position:absolute; bottom:8px; left:50%; transform:translateX(-50%); width:120px; height:5px; border-radius:3px; background:var(--ink); opacity:.22; z-index:9; }
+  .float-card{ position:absolute; display:flex; align-items:center; gap:11px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:12px 15px; box-shadow:0 20px 44px -18px rgba(22,35,63,.30); z-index:5; }
+  .float-card b{ font-size:14.5px; color:var(--ink); display:block; line-height:1.15; }
+  .float-card small{ font-size:12px; color:var(--muted); }
+  .fc-ic{ width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex:0 0 auto; }
+  .fc-a{ top:196px; left:-48px; }
+  .fc-b{ bottom:150px; right:-42px; }
+
+  /* ---- generic section ---- */
+  .band{ padding:86px 0; }
+  .band.tight{ padding:64px 0; }
+  .kicker{ font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-deep); font-weight:700; }
+  .h2{ font-size:40px; font-weight:800; color:var(--ink); margin-top:12px; }
+  .lead{ font-size:19px; color:var(--slate); margin-top:18px; max-width:60ch; line-height:1.5; }
+
+  /* ---- problem ---- */
+  .problem{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .problem .h2{ max-width:20ch; }
+
+  /* ---- steps ---- */
+  .steps{ margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .step{ background:var(--white); border:1px solid var(--line); border-radius:20px; padding:24px 22px; }
+  .step .n{ width:38px; height:38px; border-radius:11px; background:#F6EED9; color:var(--gold-deep); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; }
+  .step h3{ font-size:18px; margin-top:16px; color:var(--ink); }
+  .step p{ font-size:14.5px; color:var(--slate); margin-top:9px; line-height:1.5; }
+
+  /* ---- showcase ---- */
+  .showcase{ background:radial-gradient(120% 100% at 20% 0%, var(--navy-2) 0%, var(--navy-3) 82%); color:#EAF0FF; }
+  .showcase .wrap{ display:grid; grid-template-columns:.9fr 1.1fr; gap:44px; align-items:center; }
+  .showcase .kicker{ color:var(--gold); }
+  .showcase .h2{ color:#fff; }
+  .showcase .lead{ color:#C5CFE2; }
+  .showcase ul{ list-style:none; padding:0; margin:26px 0 0; display:flex; flex-direction:column; gap:14px; }
+  .showcase li{ display:flex; gap:12px; align-items:flex-start; font-size:16px; color:#DCE4F2; }
+  .showcase li svg{ width:22px; height:22px; flex:0 0 auto; margin-top:1px; }
+
+  /* ---- why grid ---- */
+  .why{ margin-top:46px; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .card{ background:var(--white); border:1px solid var(--line); border-radius:20px; padding:26px 24px; }
+  .card .ic{ width:44px; height:44px; border-radius:12px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .card h3{ font-size:19px; color:var(--ink); }
+  .card p{ font-size:15px; color:var(--slate); margin-top:9px; line-height:1.55; }
+
+  /* ---- waitlist ---- */
+  .waitlist{ background:linear-gradient(180deg,var(--navy-2),var(--navy)); color:#fff; text-align:center; }
+  .waitlist .h2{ color:#fff; }
+  .waitlist .lead{ color:#C5CFE2; margin:18px auto 0; text-align:center; }
+  .form{ margin:34px auto 0; max-width:520px; display:flex; gap:10px; }
+  .form input{ flex:1; min-width:0; border:1.5px solid rgba(234,240,255,.28); background:rgba(255,255,255,.06); color:#fff; border-radius:14px; padding:15px 18px; font-size:16px; font-family:inherit; outline:none; }
+  .form input::placeholder{ color:#9AA6BD; }
+  .form input:focus{ border-color:var(--blue-2); }
+  .form .btn-gold{ white-space:nowrap; }
+  .thanks{ display:none; margin:30px auto 0; max-width:520px; background:rgba(30,154,103,.15); border:1px solid rgba(30,154,103,.5); border-radius:16px; padding:20px; font-size:16px; color:#CFF3E1; }
+  .thanks.show{ display:block; animation:fade .3s ease; }
+  .refpanel{ display:none; margin:30px auto 0; max-width:560px; text-align:center; }
+  .refpanel.show{ display:block; animation:fade .35s ease; }
+  .rp-pos{ font-size:22px; font-weight:750; color:#fff; }
+  .rp-say{ margin:10px auto 0; max-width:44ch; font-size:15px; color:#C5CFE2; line-height:1.5; }
+  .rp-box{ margin-top:20px; display:flex; gap:10px; }
+  .rp-box input{ flex:1; min-width:0; background:rgba(255,255,255,.07); border:1.5px solid rgba(234,240,255,.24); color:#EAF0FF; border-radius:13px; padding:14px 16px; font-size:14px; font-family:inherit; }
+  .rp-box button{ flex:0 0 auto; background:linear-gradient(180deg,#F6D050,var(--gold)); color:#3A2708; border:none; border-radius:13px; padding:0 22px; font-weight:700; font-size:14px; cursor:pointer; font-family:inherit; }
+  .rp-shares{ margin-top:14px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .rp-shares a{ display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.07); border:1px solid rgba(234,240,255,.2); color:#EAF0FF; text-decoration:none; padding:11px 17px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; }
+  .rp-shares a:hover{ background:rgba(255,255,255,.13); }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+  .microcopy{ margin-top:16px; font-size:13px; color:#8FA0BC; }
+
+  /* ---- footer ---- */
+  .foot{ background:var(--navy-3); color:#9AA6BD; padding:40px 0; }
+  .foot .wrap{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+  .foot .brand{ color:#fff; }
+  .foot .legal{ font-size:12px; max-width:60ch; line-height:1.6; }
+
+  /* ---- responsive ---- */
+  @media (max-width:860px){
+    .hero .wrap, .showcase .wrap{ grid-template-columns:1fr; }
+    .hero .wrap{ padding-bottom:56px; }
+    .phone{ grid-row:1; }
+    .hero-visual{ grid-row:1; }
+    .float-card{ display:none; }
+    .hero h1{ font-size:44px; }
+    .steps{ grid-template-columns:1fr 1fr; }
+    .why{ grid-template-columns:1fr; }
+    .h2{ font-size:32px; }
+  }
+  @media (max-width:520px){
+    .wrap{ padding:0 20px; }
+    .nav .brand span{ display:none; }
+    .steps{ grid-template-columns:1fr; }
+    .hero h1{ font-size:38px; }
+    .form{ flex-direction:column; }
+    .band{ padding:60px 0; }
+  }
+</style>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 180 122" fill="none" stroke="var(--gold-2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 56 L66 24 L102 56"/><path d="M43 46 L43 36 L51 36 L51 52"/>
+        <path d="M84 42 L150 64 L102 64"/><path d="M40 52 L40 100 L138 100 L138 64"/>
+        <path d="M58 100 L58 78 L76 78 L76 100"/><rect x="98" y="76" width="22" height="16"/>
+        <path d="M109 76 L109 92 M98 84 L120 84"/><path d="M26 100 L146 100"/>
+      </svg>
+      <span>Buy By Phone</span>
+    </a>
+    <a class="btn btn-blue" href="#waitlist">Join the waiting list</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Home buying, reimagined</span>
+      <h1>No mortgage.<br>No interest.<br><span class="g">No debt.</span></h1>
+      <p class="sub">Buy your home a piece at a time, and you always stay in control.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#waitlist">Join the waiting list</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <span class="chip">No mortgage &nbsp;·&nbsp; Buy as you go</span>
+    </div>
+
+    <!-- phone -->
+    <div class="hero-visual">
+      <div class="device">
+        <div class="device-screen">
+          <div class="island"></div>
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="sig">
+              <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.7" y="5" width="3" height="6" rx="1"/><rect x="9.3" y="2.5" width="3" height="8.5" rx="1"/><rect x="14" y="0" width="3" height="11" rx="1"/></svg>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.7c2.5 0 4.9 1 6.6 2.6l-1.4 1.5C11.9 5.5 10 4.7 8 4.7 5.9 4.7 4.1 5.5 2.8 6.8L1.4 5.3C3.1 3.7 5.5 2.7 8 2.7z"/><path d="M8 6.1c1.4 0 2.6.5 3.6 1.4L8 11.2 4.4 7.5C5.4 6.6 6.6 6.1 8 6.1z"/></svg>
+              <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" stroke-opacity=".4"/><rect x="2.3" y="2.3" width="15" height="7.4" rx="1.6" fill="currentColor"/><rect x="24" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".4"/></svg>
+            </span>
+          </div>
+          <div class="app-body">
+            <div class="ph-top">
+              <div><div class="who">Good morning, Sam</div><div class="home">Willow Green</div></div>
+              <div class="ph-av">SR</div>
+            </div>
+            <div class="dial">
+              <svg width="150" height="150" viewBox="0 0 172 172">
+                <circle cx="86" cy="86" r="74" fill="none" stroke="#EFE9DE" stroke-width="14"/>
+                <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6D050"/><stop offset="1" stop-color="#C9861A"/></linearGradient></defs>
+                <circle cx="86" cy="86" r="74" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round"
+                  stroke-dasharray="464.9" stroke-dashoffset="395.2" transform="rotate(-90 86 86)"/>
+              </svg>
+              <div class="c"><div class="l">You own</div><div class="v">15<small>%</small></div><div class="s">£87,750 of your home</div></div>
+            </div>
+            <div class="prog">
+              <div class="prog-row"><span>Journey to 100%</span><span>15% owned</span></div>
+              <div class="prog-bar"><i></i></div>
+            </div>
+            <div class="ph-cards">
+              <div class="ph-card"><div class="k">Monthly rent</div><div class="val dn">£2,082</div></div>
+              <div class="ph-card"><div class="k">Your share</div><div class="val">£87,750</div></div>
+            </div>
+            <div class="ph-latest">
+              <span class="li">£</span>
+              <div style="flex:1"><div class="lt">Bought more equity</div><div class="ld">2 days ago · £25</div></div>
+              <span class="la">+0.4%</span>
+            </div>
+            <div class="ph-buy" style="margin-top:11px">＋　Buy more equity</div>
+          </div>
+          <div class="tabbar">
+            <div class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 4l9 6.5M5 9.5V20h14V9.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>Activity</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.6 4-5 7-5s6 1.4 7 5" stroke-linecap="round"/></svg>Account</div>
+          </div>
+          <div class="home-ind"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="band problem">
+  <div class="wrap">
+    <span class="kicker">A home buying revolution</span>
+    <h2 class="h2">Buy as you Rent.</h2>
+    <p class="lead">
+      We reimagined how people buy homes to make it fast, simple, and painless. If you can afford to rent a
+      property, with Buy By Phone, you can buy it.
+    </p>
+    <p class="lead">
+      The app that replaces a mortgage, with a debt-free way to buy equity, free and clear in your home at any
+      time. Buy By Phone is the bridge from renting to owning that you can cross at your own pace.
+    </p>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="band" id="how">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2 class="h2">A simple, transparent path to owning your home.</h2>
+    <p class="lead">Designed for real life — start where you are, and grow your share at your own pace.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4.2"/><path d="M11 11l8.5 8.5M17 17l2-2M14 14l2-2"/></svg></div>
+        <h3>Buy your first stake</h3>
+        <p>Purchase your first stake through a solicitor, just like a normal property purchase.</p>
+      </div>
+      <div class="step">
+        <div class="n"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8.5A2.5 2.5 0 016.5 6h11A2.5 2.5 0 0120 8.5V11"/><path d="M3.5 11A2.5 2.5 0 016 13.5V16h12v-2.5A2.5 2.5 0 0120.5 11"/><path d="M6 18v1.5M18 18v1.5"/></svg></div>
+        <h3>Move into your home</h3>
+        <p>Settle in, and pay rent only on the share you don't yet own — as your ownership grows, your rent comes down.</p>
+      </div>
+      <div class="step">
+        <div class="n"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.6"/><path d="M11 17.5h2"/></svg></div>
+        <h3>Increase your equity</h3>
+        <p>Buy more with 1 click, from as little as £5 — no conveyancing, no solicitors, no obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APP SHOWCASE ================= -->
+<section class="band showcase">
+  <div class="wrap">
+    <!-- phone -->
+    <div class="phone" style="box-shadow:0 40px 90px -30px rgba(0,0,0,.7)">
+      <div class="scr">
+        <div class="ph-top"><div><div class="who">Buy more of your home</div><div class="home">£1,000 free this month</div></div></div>
+        <div class="ph-cards" style="margin-top:14px">
+          <div class="ph-card" style="text-align:center"><div class="val">£5</div><div class="k" style="color:var(--green); margin-top:4px">+£5 owned</div><div class="k">a coffee</div></div>
+          <div class="ph-card" style="text-align:center"><div class="val">£25</div><div class="k" style="color:var(--green); margin-top:4px">+£25 owned</div><div class="k">a takeaway</div></div>
+        </div>
+        <div class="ph-card" style="margin-top:9px; text-align:center"><div class="val">£75</div><div class="k" style="color:var(--green); margin-top:4px">+£75 owned · a night out</div></div>
+        <div class="ph-buy" style="margin-top:12px; background:linear-gradient(180deg,#5D7EEC,#4E72E6); color:#fff">Own a little more</div>
+      </div>
+    </div>
+
+    <div>
+      <span class="kicker">Your home buying journey</span>
+      <h2 class="h2">Why buy a coffee when you can buy equity?</h2>
+      <p class="lead">Buy By Phone turns spare change into bricks and mortar. Own a little more of your home with
+        1 click — from as little as £5.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><path d="M5 12.5l4.5 4.5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1 click to buy more — no solicitor, no conveyancing.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><path d="M5 12.5l4.5 4.5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Buy from just £5 — the price of a coffee.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><path d="M5 12.5l4.5 4.5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No transaction fees on equity purchases under £1,000*</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><path d="M5 12.5l4.5 4.5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Watch your rent fall the more you buy.</span></li>
+      </ul>
+      <p style="margin-top:16px; font-size:12px; color:#8FA0BC; line-height:1.5;">*Free on up to £1,000 of equity purchases each month; a small fee applies above that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY DIFFERENT ================= -->
+<section class="band">
+  <div class="wrap">
+    <span class="kicker">Why it's different</span>
+    <h2 class="h2">Home buying, with you in control.</h2>
+    <div class="why">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 4l9 6.5M5 9.5V20h14V9.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>No mortgage, no interest, no debt</h3>
+        <p>You own your share outright from day one. There's no loan against your name and no interest to pay — ever.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Buy on your terms</h3>
+        <p>Any amount, any time, from your phone. Speed up, slow down, or pause — there's never any obligation to buy more.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s2-2 8-2 8 2 8 2M7 10l5-6 5 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Ownership that grows</h3>
+        <p>Every share you buy is yours to keep — real ownership that builds over time. And the more of your home you own, the less rent you pay.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-4.6 6-4.6s6 1.6 6 4.6"/><path d="M16 5.4a3 3 0 010 5.2M17.5 14.6c2.1.5 3.5 1.9 3.5 4.4"/></svg></div>
+        <h3>Buy with friends or family</h3>
+        <p>Buy the home together, but your money stays separate. You'll always know who paid what — everyone's share stays clear and simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WAITLIST ================= -->
+<section class="band waitlist" id="waitlist">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--gold)">Launching soon</span>
+    <h2 class="h2">Be among the first.</h2>
+    <p class="lead">Homebuying is changing. Join the waiting list to be one of the first to become a Home Owner with the Buy By Phone homebuying revolution.</p>
+    <form class="form" id="wlForm" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return joinList(event)">
+      <input type="hidden" name="form-name" value="waitlist">
+      <input type="hidden" name="variant" value="A-no-mortgage">
+      <input type="hidden" name="ref" id="wlRefSrc" value="">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="text" id="wlName" name="name" placeholder="Your name" autocomplete="name" required>
+      <input type="email" id="wlEmail" name="email" placeholder="Your email" autocomplete="email" required>
+      <button class="btn btn-gold" type="submit">Join the waiting list</button>
+    </form>
+    <div class="refpanel" id="wlThanks">
+      <div class="rp-pos" id="wlPos">You're on the list!</div>
+      <p class="rp-say">Jump the queue — every friend who joins from your link moves you up. Early access goes to the top of the list first.</p>
+      <div class="rp-box">
+        <input id="wlRef" readonly value="">
+        <button type="button" onclick="copyRef(this)">Copy link</button>
+      </div>
+      <div class="rp-shares">
+        <a id="shWa" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <a id="shX" target="_blank" rel="noopener">Share on X</a>
+        <a id="shEm">Email a friend</a>
+      </div>
+    </div>
+    <p class="microcopy" id="wlMicro">No spam, ever. Registering places you under no obligation.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 180 122" fill="none" stroke="var(--gold-2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 56 L66 24 L102 56"/><path d="M84 42 L150 64 L102 64"/><path d="M40 52 L40 100 L138 100 L138 64"/>
+        <path d="M58 100 L58 78 L76 78 L76 100"/><rect x="98" y="76" width="22" height="16"/><path d="M26 100 L146 100"/>
+      </svg>
+      <span>Buy By Phone</span>
+    </a>
+    <p class="legal">
+      Buy By Phone is a product of Lenuity. This page is to register your interest only — it is not an offer,
+      a financial promotion, or financial advice, and Buy By Phone is not yet available. Registering places you
+      under no obligation. © 2026 Lenuity.
+    </p>
+  </div>
+</footer>
+
+<script>
+  function joinList(e){
+    e.preventDefault();
+    var form = document.getElementById("wlForm");
+    var name = document.getElementById("wlName").value.trim();
+    var email = document.getElementById("wlEmail").value.trim();
+    if(!name || !email) return false;
+    // Capture the signup via Netlify Forms (name, email, referral source).
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).catch(function(){});
+    document.getElementById("wlForm").style.display = "none";
+    document.getElementById("wlMicro").style.display = "none";
+    var first = name.split(" ")[0];
+    document.getElementById("wlPos").textContent = "You're in, " + first + " — welcome to the queue.";
+    // Referral link — points at wherever the page is served, so it works on any domain.
+    var ref = location.origin + "/?r=" + first.toLowerCase().replace(/[^a-z0-9]/g,"") + Math.floor(100+Math.random()*900);
+    document.getElementById("wlRef").value = ref;
+    var msg = "I've joined the waiting list for Buy By Phone — a new way to buy your home with no mortgage, no interest and no debt. Join me:";
+    document.getElementById("shWa").href = "https://wa.me/?text=" + encodeURIComponent(msg + " " + ref);
+    document.getElementById("shX").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(msg) + "&url=" + encodeURIComponent(ref);
+    document.getElementById("shEm").href = "mailto:?subject=" + encodeURIComponent("Buy By Phone") + "&body=" + encodeURIComponent(msg + " " + ref);
+    document.getElementById("wlThanks").classList.add("show");
+    return false;
+  }
+  function copyRef(btn){
+    var el = document.getElementById("wlRef");
+    el.select(); el.setSelectionRange(0, 999);
+    try{ if(navigator.clipboard){ navigator.clipboard.writeText(el.value); } else { document.execCommand("copy"); } }catch(err){}
+    var t = btn.textContent; btn.textContent = "Copied!";
+    setTimeout(function(){ btn.textContent = t; }, 1600);
+  }
+  // Record which referral code (?r=...) brought this visitor, so it rides along with the signup.
+  (function(){
+    try{
+      var r = new URLSearchParams(location.search).get("r");
+      if(r){ var f = document.getElementById("wlRefSrc"); if(f) f.value = r; }
+    }catch(err){}
+  })();
+</script>
+</body>
+</html>

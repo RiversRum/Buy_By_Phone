@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy By Phone — Frequently asked questions</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KICA8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI3IiBmaWxsPSIjMTYyMzNGIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNCwxNykgc2NhbGUoMC42MikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y0Qzc0MCIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0zMCA1NiBMNjYgMjQgTDEwMiA1NiIvPgogICAgPHBhdGggZD0iTTg0IDQyIEwxNTAgNjQgTDEwMiA2NCIvPgogICAgPHBhdGggZD0iTTQwIDUyIEw0MCAxMDAgTDEzOCAxMDAgTDEzOCA2NCIvPgogICAgPHBhdGggZD0iTTU4IDEwMCBMNTggNzggTDc2IDc4IEw3NiAxMDAiLz4KICAgIDxyZWN0IHg9Ijk4IiB5PSI3NiIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE2Ii8+CiAgICA8cGF0aCBkPSJNMjYgMTAwIEwxNDYgMTAwIi8+CiAgPC9nPgo8L3N2Zz4K">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#16233F">
+<style>
+  :root{
+    --navy:#16233F; --navy-2:#1C2B49; --navy-3:#0E1729;
+    --gold:#F4C740; --gold-2:#E7AC33; --gold-deep:#C68A15;
+    --blue:#4E72E6; --blue-2:#5D7EEC;
+    --paper:#FBF8F2; --white:#fff;
+    --ink:#16233F; --slate:#4A5164; --muted:#8A8F9C;
+    --line:#EAE4D8; --line-2:#E2DBCC;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55; }
+  .wrap{ max-width:820px; margin:0 auto; padding:0 24px; }
+  a{ color:inherit; }
+  h1,h2{ letter-spacing:-.02em; line-height:1.1; margin:0; text-wrap:balance; }
+
+  /* nav */
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(251,248,242,.88); backdrop-filter:saturate(1.4) blur(12px); border-bottom:1px solid var(--line); }
+  .nav .row{ max-width:1120px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:11px; font-weight:750; font-size:18px; color:var(--ink); text-decoration:none; }
+  .brand svg{ width:32px; height:26px; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; border:none; cursor:pointer; font-family:inherit; font-weight:650; border-radius:12px; text-decoration:none;
+    background:linear-gradient(180deg,#F6D050,var(--gold)); color:#3A2708; padding:11px 20px; font-size:14.5px; box-shadow:0 12px 24px -12px rgba(242,198,58,.7); transition:transform .12s ease; }
+  .btn:active{ transform:scale(.97); }
+
+  /* hero */
+  .hero{ padding:56px 0 30px; text-align:center; }
+  .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep); font-weight:700; margin-bottom:16px; }
+  .hero h1{ font-size:clamp(34px,5.4vw,52px); font-weight:800; letter-spacing:-.03em; }
+  .hero p{ margin:18px auto 0; max-width:52ch; font-size:17px; color:var(--slate); }
+
+  /* categories + accordion */
+  .cat{ padding:26px 0 4px; }
+  .cat h2{ font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); font-weight:700; }
+  .qa{ border-bottom:1px solid var(--line); }
+  .qa summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:20px 4px; font-size:17.5px; font-weight:650; color:var(--ink); }
+  .qa summary::-webkit-details-marker{ display:none; }
+  .qa summary:hover{ color:var(--navy-2); }
+  .qa .chev{ flex:0 0 auto; width:26px; height:26px; border-radius:50%; border:1.5px solid var(--line-2); display:flex; align-items:center; justify-content:center;
+    color:var(--gold-deep); font-size:19px; line-height:1; transition:transform .25s ease; }
+  .qa[open] .chev{ transform:rotate(90deg); }
+  .qa .a{ padding:0 4px 22px; max-width:64ch; }
+  .qa .a p{ margin:0; font-size:16px; color:var(--slate); line-height:1.6; }
+  .qa .a p + p{ margin-top:10px; }
+
+  /* closing CTA */
+  .cta-band{ margin:44px 0 10px; background:var(--white); border:1px solid var(--line); border-radius:18px; padding:28px 26px; text-align:center; }
+  .cta-band h2{ font-size:22px; font-weight:750; }
+  .cta-band p{ margin:8px 0 18px; color:var(--slate); font-size:15.5px; }
+
+  /* footer */
+  .foot{ margin-top:36px; background:var(--navy-3); color:#93A0BC; padding:34px 0; font-size:12.5px; line-height:1.7; }
+  .foot .wrap{ max-width:820px; }
+  .foot b{ color:#EAF0FF; }
+
+  @media (max-width:560px){ .hero{ padding:40px 0 20px; } .qa summary{ font-size:16.5px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="row">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 180 122" fill="none" stroke="var(--gold-2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 56 L66 24 L102 56"/><path d="M84 42 L150 64 L102 64"/><path d="M40 52 L40 100 L138 100 L138 64"/>
+        <path d="M58 100 L58 78 L76 78 L76 100"/><rect x="98" y="76" width="22" height="16"/><path d="M26 100 L146 100"/>
+      </svg>
+      <span>Buy By Phone</span>
+    </a>
+    <a class="btn" href="/#waitlist">Join the waiting list</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Questions &amp; answers</span>
+    <h1>Frequently asked questions</h1>
+    <p>How Buy By Phone works — buying your home a share at a time, with no mortgage, no interest and no debt.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="cat">
+    <h2>The basics</h2>
+    <details class="qa"><summary>What is Buy By Phone?<span class="chev">›</span></summary>
+      <div class="a"><p>Buy By Phone is a new way to buy your home gradually. You buy a share of your home to start with and move in, then buy more of it whenever you choose — right from your phone. You own the share you've bought outright, with no mortgage, no interest and no debt, and you pay rent only on the share you don't own yet.</p></div></details>
+    <details class="qa"><summary>Is this a mortgage or a loan?<span class="chev">›</span></summary>
+      <div class="a"><p>No. There's no mortgage, no interest and no debt. You buy your share outright. The only regular payment is rent on the part of the home you don't own yet.</p></div></details>
+    <details class="qa"><summary>Do I actually own my home?<span class="chev">›</span></summary>
+      <div class="a"><p>Yes — you own the share you've bought, and it's recorded legally through your solicitor. As you buy more, your share grows, and you can go all the way to owning 100%.</p></div></details>
+    <details class="qa"><summary>Is this a government scheme, like Shared Ownership?<span class="chev">›</span></summary>
+      <div class="a"><p>No. Buy By Phone is its own product from Lenuity, not a government scheme. Buying a home in shares isn't a new idea — what's different is that you can buy more of your home quickly through an app, without the legal process and valuation costs that usually come each time you want to increase your share.</p></div></details>
+    <details class="qa"><summary>How is it different from renting?<span class="chev">›</span></summary>
+      <div class="a"><p>The difference is ownership. With Buy By Phone you own a share of your home from day one, you can add to it whenever you like, and the more you own, the less rent you pay.</p></div></details>
+  </section>
+
+  <section class="cat">
+    <h2>Getting your first home</h2>
+    <details class="qa"><summary>How do I buy a home with Buy By Phone?<span class="chev">›</span></summary>
+      <div class="a"><p>You choose a home from a participating development and buy your first share through a solicitor, just like a normal home purchase. Your solicitor checks your identity and sets up your account. Once you complete, you move in — and from then on you can buy more of your home through the app.</p></div></details>
+    <details class="qa"><summary>How much do I need to start?<span class="chev">›</span></summary>
+      <div class="a"><p>You start by buying an initial share — a small portion of the home's value — plus the normal costs of buying a home. Because there's no mortgage, there's no separate mortgage deposit to save on top.</p></div></details>
+    <details class="qa"><summary>What kind of homes can I buy?<span class="chev">›</span></summary>
+      <div class="a"><p>To begin with, new-build homes from the housebuilders we work with. We'll add more homes and locations over time.</p></div></details>
+    <details class="qa"><summary>Who is it for?<span class="chev">›</span></summary>
+      <div class="a"><p>It's designed for first-time buyers who can comfortably afford the rent and want to start owning without a big deposit and mortgage. You'll go through the usual affordability and identity checks.</p></div></details>
+  </section>
+
+  <section class="cat">
+    <h2>Rent, and buying more of your home</h2>
+    <details class="qa"><summary>Why do I pay rent?<span class="chev">›</span></summary>
+      <div class="a"><p>You pay rent only on the share of the home you don't own yet — it's for living in that part. Rent and buying equity are two separate things: rent is for occupying, and buying more equity is how you increase what you own.</p></div></details>
+    <details class="qa"><summary>Will my rent change?<span class="chev">›</span></summary>
+      <div class="a"><p>Rent is reviewed from time to time and can change. The key thing in your control: the more of your home you own, the less rent you pay — so buying more is how you bring your rent down.</p></div></details>
+    <details class="qa"><summary>How do I buy more of my home?<span class="chev">›</span></summary>
+      <div class="a"><p>Through the app, whenever you choose, for as much or as little as you like. Small amounts are quick — just a few taps. Larger purchases involve a proper valuation and a few checks, so they're a bit more considered — but you don't go through the whole legal process again each time.</p></div></details>
+    <details class="qa"><summary>Can I own 100% of my home?<span class="chev">›</span></summary>
+      <div class="a"><p>Yes. You can keep buying more at your own pace, all the way to owning your home outright. There's no obligation to buy more, and no set schedule — you choose if and when.</p></div></details>
+  </section>
+
+  <section class="cat">
+    <h2>Costs and Stamp Duty</h2>
+    <details class="qa"><summary>What does it cost?<span class="chev">›</span></summary>
+      <div class="a"><p>You pay for your initial share plus the normal costs of buying a home, such as your solicitor's fees. There's no mortgage, so no interest. Any reservation fee you pay to secure the home is put toward your purchase, and some housebuilders may cover certain costs as an incentive.</p></div></details>
+    <details class="qa"><summary>Are there fees to buy more of my home?<span class="chev">›</span></summary>
+      <div class="a"><p>Buying more is designed to be simple and low-cost. Small purchases are quick and easy; a larger purchase may need a professional valuation.</p></div></details>
+    <details class="qa"><summary>Is there Stamp Duty?<span class="chev">›</span></summary>
+      <div class="a"><p>Buying a home can involve Stamp Duty, just like any purchase. How and when you pay it is something you decide with your solicitor, based on your own circumstances and the rules at the time — it's a tax matter for you and your solicitor, not something Buy By Phone sets. Your solicitor will guide you.</p></div></details>
+  </section>
+
+  <section class="cat">
+    <h2>Ownership, security and moving on</h2>
+    <details class="qa"><summary>Is my ownership protected?<span class="chev">›</span></summary>
+      <div class="a"><p>Yes. Your share is recorded legally through your solicitor, so what you own is clear and protected — just like any property purchase.</p></div></details>
+    <details class="qa"><summary>Can I sell or move?<span class="chev">›</span></summary>
+      <div class="a"><p>Yes. You can sell your home, or buy the remaining share and own it outright, and move on like any homeowner.</p></div></details>
+    <details class="qa"><summary>What if my circumstances change and I can't pay?<span class="chev">›</span></summary>
+      <div class="a"><p>There's no obligation to buy more — the share you've bought is yours, owned outright and debt-free, so buying more is always your choice.</p><p>And if you ever struggle to pay your rent, we'd work with you to find a way through — the same responsible approach any landlord should take.</p></div></details>
+    <!-- Add "Is Buy By Phone regulated? Is my money safe?" here once compliance approves the wording. -->
+  </section>
+
+  <section class="cat">
+    <h2>Getting started</h2>
+    <details class="qa"><summary>Is it available now?<span class="chev">›</span></summary>
+      <div class="a"><p>Not yet — we're getting ready to launch. Right now, you can join the waiting list to be among the first to hear when Buy By Phone goes live.</p></div></details>
+    <details class="qa"><summary>How do I stay updated?<span class="chev">›</span></summary>
+      <div class="a"><p>Join the waiting list, and we'll let you know as we open up homes and locations.</p></div></details>
+  </section>
+
+  <div class="cta-band">
+    <h2>Be among the first</h2>
+    <p>Buy By Phone is launching soon. Join the waiting list to hear when it goes live.</p>
+    <a class="btn" href="/#waitlist">Join the waiting list</a>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <b>Buy By Phone is a product of Lenuity.</b> This page is for general information only — it is not an offer or financial, legal or tax advice, and Buy By Phone is not yet available. Joining the waiting list places you under no obligation. &copy; Lenuity.
+  </div>
+</footer>
+
+</body>
+</html>
