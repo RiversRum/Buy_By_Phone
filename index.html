@@ -76,8 +76,10 @@
   .ph-card .val.dn{ color:var(--green); }
   .ph-buy{ margin-top:12px; text-align:center; background:linear-gradient(180deg,#F6D050,var(--gold)); color:#3A2708; border-radius:13px; padding:12px; font-weight:700; font-size:14px; }
 
-  /* hero phone — clean flat iPhone */
-  .hero-visual{ position:relative; justify-self:center; }
+  /* hero phone — rendered image */
+  .hero-visual{ position:relative; justify-self:center; margin:0; text-align:center; }
+  .hero-phone{ display:block; width:min(360px,100%); height:auto; margin:0 auto; filter:drop-shadow(0 34px 40px rgba(22,35,63,.20)); }
+  .hero-visual figcaption{ margin-top:6px; font-size:11.5px; color:var(--muted); }
   .device{ position:relative; width:278px; background:#0b0b0d; border-radius:52px; padding:11px;
     box-shadow: inset 0 0 0 2px #26272c, 0 0 0 1px rgba(0,0,0,.06),
       0 50px 90px -38px rgba(22,35,63,.42), 0 22px 44px -30px rgba(22,35,63,.28); }
@@ -178,6 +180,7 @@
   @media (max-width:860px){
     .hero .wrap, .showcase .wrap{ grid-template-columns:1fr; }
     .hero .wrap{ padding-bottom:56px; }
+    .hero-phone{ width:min(290px,78vw); }
     .phone{ grid-row:1; }
     .hero-visual{ grid-row:1; }
     .float-card{ display:none; }
@@ -227,56 +230,11 @@
     </div>
 
     <!-- phone -->
-    <div class="hero-visual">
-      <div class="device">
-        <div class="device-screen">
-          <div class="island"></div>
-          <div class="statusbar">
-            <span>9:41</span>
-            <span class="sig">
-              <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.7" y="5" width="3" height="6" rx="1"/><rect x="9.3" y="2.5" width="3" height="8.5" rx="1"/><rect x="14" y="0" width="3" height="11" rx="1"/></svg>
-              <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.7c2.5 0 4.9 1 6.6 2.6l-1.4 1.5C11.9 5.5 10 4.7 8 4.7 5.9 4.7 4.1 5.5 2.8 6.8L1.4 5.3C3.1 3.7 5.5 2.7 8 2.7z"/><path d="M8 6.1c1.4 0 2.6.5 3.6 1.4L8 11.2 4.4 7.5C5.4 6.6 6.6 6.1 8 6.1z"/></svg>
-              <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" stroke-opacity=".4"/><rect x="2.3" y="2.3" width="15" height="7.4" rx="1.6" fill="currentColor"/><rect x="24" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".4"/></svg>
-            </span>
-          </div>
-          <div class="app-body">
-            <div class="ph-top">
-              <div><div class="who">Good morning, Sam</div><div class="home">Willow Green</div></div>
-              <div class="ph-av">SR</div>
-            </div>
-            <div class="dial">
-              <svg width="150" height="150" viewBox="0 0 172 172">
-                <circle cx="86" cy="86" r="74" fill="none" stroke="#EFE9DE" stroke-width="14"/>
-                <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6D050"/><stop offset="1" stop-color="#C9861A"/></linearGradient></defs>
-                <circle cx="86" cy="86" r="74" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round"
-                  stroke-dasharray="464.9" stroke-dashoffset="395.2" transform="rotate(-90 86 86)"/>
-              </svg>
-              <div class="c"><div class="l">You own</div><div class="v">15<small>%</small></div><div class="s">£87,750 of your home</div></div>
-            </div>
-            <div class="prog">
-              <div class="prog-row"><span>Journey to 100%</span><span>15% owned</span></div>
-              <div class="prog-bar"><i></i></div>
-            </div>
-            <div class="ph-cards">
-              <div class="ph-card"><div class="k">Monthly rent</div><div class="val dn">£2,082</div></div>
-              <div class="ph-card"><div class="k">Your share</div><div class="val">£87,750</div></div>
-            </div>
-            <div class="ph-latest">
-              <span class="li">£</span>
-              <div style="flex:1"><div class="lt">Bought more equity</div><div class="ld">2 days ago · £25</div></div>
-              <span class="la">+0.4%</span>
-            </div>
-            <div class="ph-buy" style="margin-top:11px">＋　Buy more equity</div>
-          </div>
-          <div class="tabbar">
-            <div class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 4l9 6.5M5 9.5V20h14V9.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</div>
-            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>Activity</div>
-            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.6 4-5 7-5s6 1.4 7 5" stroke-linecap="round"/></svg>Account</div>
-          </div>
-          <div class="home-ind"></div>
-        </div>
-      </div>
-    </div>
+    <figure class="hero-visual">
+      <img class="hero-phone" src="hero-phone.webp" width="840" height="1243"
+        alt="Buy By Phone app home screen: you own 5% of your home, monthly rent £2,328, and a Buy more equity button" fetchpriority="high">
+      <figcaption>Illustrative example. App in development.</figcaption>
+    </figure>
   </div>
 </section>
 
