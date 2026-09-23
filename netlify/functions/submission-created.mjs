@@ -23,17 +23,25 @@ async function brevo(path, method, body) {
 // Referral codes are short lowercase slugs like "paul482"; keep anything else out.
 const cleanCode = (c) => (String(c || "").toLowerCase().match(/^[a-z0-9]{2,40}$/) || [""])[0];
 
-export default async (req) => {
-  const { payload } = await req.json();
-  if (!payload || payload.form_name !== "waitlist") return new Response("ignored");
-  if (!process.env.BREVO_API_KEY) {
-    console.error("BREVO_API_KEY missing: signup kept in Netlify Forms only");
-    return new Response("no key");
+// Classic handler signature: the one Netlify documents for event-triggered functions.
+export const handler = async (event) => {
+  const done = (msg) => {
+    console.log("submission-created:", msg);
+    return { statusCode: 200, body: msg };
+  };
+  let payload;
+  try {
+    payload = JSON.parse(event.body || "{}").payload;
+  } catch (err) {
+    return done("could not parse body: " + err.message);
   }
+  if (!payload) return done("no payload");
+  if (payload.form_name !== "waitlist") return done("ignored form " + payload.form_name);
+  if (!process.env.BREVO_API_KEY) return done("BREVO_API_KEY missing: signup kept in Netlify Forms only");
 
   const d = payload.data || {};
   const email = String(d.email || "").trim().toLowerCase();
-  if (!email) return new Response("no email");
+  if (!email) return done("no email in submission");
 
   const attributes = {
     FIRSTNAME: String(d.name || "").trim().split(/\s+/)[0] || "",
@@ -64,9 +72,9 @@ export default async (req) => {
     }
   } catch (err) {
     // The signup is still safe in Netlify Forms; log and stop.
-    console.error(err.message);
-    return new Response("brevo error");
+    return done("brevo error: " + err.message);
   }
+  console.log("submission-created: added to Brevo", email);
 
   // Credit the referrer (best effort: a failure here never loses the signup).
   if (attributes.REFERRED_BY && attributes.REFERRED_BY !== attributes.REF_CODE) {
@@ -85,5 +93,5 @@ export default async (req) => {
     }
   }
 
-  return new Response("ok");
+  return done("ok");
 };
