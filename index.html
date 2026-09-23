@@ -350,6 +350,7 @@
       <input type="hidden" name="form-name" value="waitlist">
       <input type="hidden" name="variant" value="A-no-mortgage">
       <input type="hidden" name="ref" id="wlRefSrc" value="">
+      <input type="hidden" name="mycode" id="wlMyCode" value="">
       <p style="display:none"><label>Don't fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <input type="text" id="wlName" name="name" placeholder="Your name" autocomplete="name" required>
       <input type="email" id="wlEmail" name="email" placeholder="Your email" autocomplete="email" required>
@@ -397,7 +398,11 @@
     var name = document.getElementById("wlName").value.trim();
     var email = document.getElementById("wlEmail").value.trim();
     if(!name || !email) return false;
-    // Capture the signup via Netlify Forms (name, email, referral source).
+    var first = name.split(" ")[0];
+    // This signup's own referral code; sent with the form so the referrer can be credited later.
+    var code = first.toLowerCase().replace(/[^a-z0-9]/g,"") + Math.floor(100+Math.random()*900);
+    document.getElementById("wlMyCode").value = code;
+    // Capture the signup via Netlify Forms (name, email, referral source, own code).
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -405,10 +410,9 @@
     }).catch(function(){});
     document.getElementById("wlForm").style.display = "none";
     document.getElementById("wlMicro").style.display = "none";
-    var first = name.split(" ")[0];
     document.getElementById("wlPos").textContent = "You're in, " + first + " — welcome to the queue.";
     // Referral link — points at wherever the page is served, so it works on any domain.
-    var ref = location.origin + "/?r=" + first.toLowerCase().replace(/[^a-z0-9]/g,"") + Math.floor(100+Math.random()*900);
+    var ref = location.origin + "/?r=" + code;
     document.getElementById("wlRef").value = ref;
     var msg = "I've joined the waiting list for Buy By Phone — a new way to buy your home with no mortgage, no interest and no debt. Join me:";
     document.getElementById("shWa").href = "https://wa.me/?text=" + encodeURIComponent(msg + " " + ref);
